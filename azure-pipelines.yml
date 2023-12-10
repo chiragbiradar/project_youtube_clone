@@ -19,3 +19,16 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students(2e0045b0-6306-472c-8fee-f0236e8f8818)'
+    appType: 'webAppLinux'
+    WebAppName: 'youtubeclonechirag'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/build'
+    RuntimeStack: 'NODE|18-lts'   
+    
+
+    
